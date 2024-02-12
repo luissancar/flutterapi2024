@@ -88,7 +88,14 @@ class _InicioState extends State<Inicio> {
   List<Widget> _listGifs(data) {
     List<Widget> gifs = [];
     for (var gif in data) {
-      gifs.add(Text(gif.url));
+      gifs.add(
+          Image.network(
+            gif.url, //  URL de  imagen
+            width: 200.0, // Ancho de la imagen
+            height: 200.0, // Altura de la imagen
+            fit: BoxFit.contain, // Ajuste de la imagen dentro del contenedor
+          )
+      );
     }
     return gifs;
   }
